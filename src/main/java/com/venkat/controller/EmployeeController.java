@@ -27,6 +27,12 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
+    @RequestMapping(value="/emp/{empId}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable Integer empId){
+        Employee emp = employeeService.getEmployeeById(empId);
+        return ResponseEntity.ok().body(emp);
+    }
+
     @RequestMapping(value="/createEmp", method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
@@ -34,8 +40,15 @@ public class EmployeeController {
         return employeeService.addEmployee(emp);
     }
 
+    @RequestMapping(value="/updateEmp", method = RequestMethod.PUT, produces = APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseBody
+    public Employee updateEmployee(@RequestBody Employee emp){
+        return employeeService.addEmployee(emp);
+    }
+
     @RequestMapping(value="/{email:.+}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Employee> findEmployeeById(@PathVariable("email") String email){
+    public ResponseEntity<Employee> findEmployeeByEmail(@PathVariable("email") String email){
         return ResponseEntity.ok().body(employeeService.getEmployeeByEmail(email));
     }
 

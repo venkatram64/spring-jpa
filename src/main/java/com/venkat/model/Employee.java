@@ -1,6 +1,8 @@
 package com.venkat.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 /**
@@ -9,11 +11,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Emp")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Employee {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     @Column(name="FIRST_NAME")
     private String firstName;
@@ -25,13 +28,13 @@ public class Employee {
     private String email;
 
     @Column(name="AGE")
-    private int age;
+    private Integer age;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -59,11 +62,11 @@ public class Employee {
         this.email = email;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 }

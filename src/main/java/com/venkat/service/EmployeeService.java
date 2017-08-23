@@ -25,9 +25,14 @@ public class EmployeeService {
        return employeeRepository.findAll();
     }
 
+    public Employee getEmployeeById(Integer id){
+        return employeeRepository.getOne(id);
+    }
+
     public Employee addEmployee(Employee emp){
         return employeeRepository.save(emp);
     }
+
 
     public Employee getEmployeeByEmail(String email){
         return employeeRepository.findByEmail(email);
