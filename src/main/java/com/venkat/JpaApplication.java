@@ -12,11 +12,6 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 @SpringBootApplication
 public class JpaApplication {
 
-    /*@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application){
-        return application.sources(JpaApplication.class);
-    }*/
-
     public static void main(String[] args) {
         SpringApplication.run(JpaApplication.class, args);
     }
