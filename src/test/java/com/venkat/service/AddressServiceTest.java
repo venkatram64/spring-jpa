@@ -22,13 +22,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @ActiveProfiles("test")
 @RunWith(SpringRunner.class)
-//@SpringBootTest(classes = {Address.class, AddressService.class})
+@SpringBootTest(classes = {Address.class, AddressService.class})
 @EntityScan(basePackages = {"com.venkat.model"})
-@EnableConfigurationProperties
+//@EnableConfigurationProperties
 @EnableAutoConfiguration
-@EnableJpaRepositories(basePackages={"com.venkat.service"})
-@DataJpaTest
-//@AutoConfigureTestDatabase
+//@EnableJpaRepositories(basePackages={"com.venkat.service"})
+//@DataJpaTest
+@AutoConfigureTestDatabase
 public class AddressServiceTest {
 
     @Autowired
