@@ -1,5 +1,6 @@
 package com.venkat.service;
 
+import com.venkat.model.Address;
 import com.venkat.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,8 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    @Autowired AddressRepository addressRepository;
+
     public List<Employee> getAllEmployees(){
        /* List<Employee> empList = new ArrayList<>();
         employeeRepository.findAll()
@@ -30,6 +33,10 @@ public class EmployeeService {
     }
 
     public Employee addEmployee(Employee emp){
+        Address address = emp.getAddress();
+        if(emp != null){
+            address = addressRepository.save(address);
+        }
         return employeeRepository.save(emp);
     }
 

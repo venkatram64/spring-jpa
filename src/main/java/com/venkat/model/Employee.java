@@ -30,6 +30,10 @@ public class Employee {
     @Column(name="AGE")
     private Integer age;
 
+    @OneToOne
+    @JoinColumn(name="ADDRESS_ID")
+    private Address address;
+
     public Integer getId() {
         return id;
     }
@@ -68,5 +72,13 @@ public class Employee {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

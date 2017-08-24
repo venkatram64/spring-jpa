@@ -19,6 +19,21 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequestMapping("employee")
 public class EmployeeController {
 
+    /*
+    {
+    "id": 1,
+    "firstName": "Srijan",
+    "lastName": "Veerareddy",
+    "email": "srijan.veerareddy@gmail.com",
+    "age": 17,
+    "address": {
+      "id": 1,
+      "line1": "RV Devaki",
+      "line2": "Narayanaguda",
+      "zipCode": "500029"
+    }
+     */
+
     @Autowired
     private EmployeeService employeeService;
 
