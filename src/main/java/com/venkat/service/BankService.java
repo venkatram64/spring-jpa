@@ -25,7 +25,7 @@ public class BankService {
         return bankRepository.save(bank);
     }
 
-    public Bank geBankById(Integer id){
+    public Bank getBankById(Integer id){
         return bankRepository.getOne(id);
     }
     public boolean deleteBankById(Integer id){

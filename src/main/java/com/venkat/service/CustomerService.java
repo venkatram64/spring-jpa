@@ -25,7 +25,7 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
-    public Customer geCustomerById(Integer id){
+    public Customer getCustomerById(Integer id){
         return customerRepository.getOne(id);
     }
     public boolean deleteCustomerById(Integer id){
