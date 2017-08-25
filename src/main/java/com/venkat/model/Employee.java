@@ -34,6 +34,23 @@ public class Employee {
     @JoinColumn(name="ADDRESS_ID")
     private Address address;
 
+    public Employee(){}
+
+    public Employee(String firstName, String lastName, String email, Integer age, Address address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+        this.address = address;
+    }
+
+    public Employee(String firstName, String lastName, String email, Integer age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+    }
+
     public Integer getId() {
         return id;
     }

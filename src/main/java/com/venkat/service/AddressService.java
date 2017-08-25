@@ -15,13 +15,19 @@ public class AddressService {
     @Autowired
     private AddressRepository addressRepository;
 
-    public List<Address> getAllEmployees(){
+    public List<Address> getAllAddresses(){
        return addressRepository.findAll();
     }
 
-    public Address addEmployee(Address addr){
+    public Address addAddress(Address addr){
         return addressRepository.save(addr);
     }
 
-
+    public Address getAddressById(Integer id){
+        return addressRepository.getOne(id);
+    }
+    public boolean deleteAddressById(Integer id){
+        addressRepository.delete(id);
+        return true;
+    }
 }

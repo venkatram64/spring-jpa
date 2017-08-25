@@ -26,6 +26,24 @@ public class Address {
     @Column(name="ZIP_CODE")
     private String zipCode;
 
+    @OneToOne(mappedBy = "address")
+    private Employee employee;
+
+    public Address(){}
+
+    public Address(String line1, String line2, String zipCode) {
+        this.line1 = line1;
+        this.line2 = line2;
+        this.zipCode = zipCode;
+    }
+
+    public Address(String line1, String line2, String zipCode, Employee employee) {
+        this.line1 = line1;
+        this.line2 = line2;
+        this.zipCode = zipCode;
+        this.employee = employee;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -56,5 +74,13 @@ public class Address {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }
