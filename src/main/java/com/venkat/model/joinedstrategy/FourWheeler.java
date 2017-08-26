@@ -8,7 +8,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="four_wheeler")
+@Table(name="four_jwheeler")
 public class FourWheeler extends Vehicle {
 
     private String SteeringWheel;

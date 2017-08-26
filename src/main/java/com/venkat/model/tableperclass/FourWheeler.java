@@ -1,14 +1,12 @@
 package com.venkat.model.tableperclass;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Venkatram on 8/26/2017.
  */
-
 @Entity
-@Table(name="four_wheeler")
+@Table(name="four_twheeler")
 public class FourWheeler extends Vehicle {
 
     private String SteeringWheel;
